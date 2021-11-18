@@ -1,8 +1,5 @@
 'use strict';
 
-// const MyArray = require('./Collection');
-// const MyArrayProto = require('./Collection');
-
 let testData = [
   1,
   2,
@@ -295,43 +292,13 @@ function arrayFill(lenght, value) {
 
 //
 //
-//
-//
-//
-// 13 (2 бала)
 // Создать конструктор (без использования классов es6) Collection который позволяет манипулировать массивом. Все функции должны быть преобразованы в модули СommonJS и подключенный из отдельных файлов Методы которые надо реализовать в коллекции: map, filter, reduce - эти методы должны возвращать коллекцию с результатом не меняя старую коллекцию transform, sanitize - преобразует текущую коллекцию (аналоги map, filter) every, indexOf - работают так же как и стандартные методы в массиве values, toArray - возвращает array toJSON, toQueryString, toString - возвращает значение в указанном формате isEmpty - проверяет пустая коллекция или нет Статические методы которые надо реализовать в коллекции: make - создает коллекцию на основании переданного массива. map, filter, reduce - эти методы должны возвращать коллекцию с результатом не меняя старую коллекцию every, indexOf - работают так же как и стандартные методы в массиве toJSON, toQueryString - возвращает значение в указанном формате Свойства массива которые надо реализовать в коллекции: lenght
+//
+//
+const MyArrayProto = require('./MyArray');
 
-// Синтаксис статики:
-// Collection.make([arr: array = []]): Collection
-// Collection.map(arr: array, callback: function): Collection
-// Collection.filter(arr: array, callback: function): Collection
-// Collection.reduce(arr: array, callback: function [, initial: any]): Collection
-// Collection.every(arr: array, callback: function): void
-// Collection.indexOf(arr: array, searchElement: string [, fromIndex: number = 0): number
-// Collection.toJSON(arr: array): string
-// Collection.toQueryString(arr: array): string
-// Collection.isEmpty(arr: array): boolean
-
-// Синтаксис методов объекта:
-// objCollection.map(callback: function): Collection
-// objCollection.filter(callback: function): Collection
-// objCollection.reduce(callback: function [, initial: any]): Collection
-// objCollection.transform(callback: function): Collection
-// objCollection.sanitize(callback: function): Collection
-// objCollection.every(callback: function): void
-// objCollection.indexOf(searchElement: string [, fromIndex: number = 0): number
-// objCollection.toJSON(): string
-// objCollection.toQueryString(): string
-// objCollection.toString(): string
-// objCollection.isEmpty(): boolean
-// Пример:
-const myArr = new MyArray();
-let numbers = [1, 2, 3, 4];
-// myArr.forEach((item) => item * 2).filter((item) => item < 2);
-// .toJSON(); // "[4,6,8]"
-
-console.log(
-  numbers.forEach((item) => {
-    console.log(item);
-  })
-);
+//
+//
+//
+//
+//
