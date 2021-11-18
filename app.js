@@ -295,10 +295,74 @@ function arrayFill(lenght, value) {
 // Создать конструктор (без использования классов es6) Collection который позволяет манипулировать массивом. Все функции должны быть преобразованы в модули СommonJS и подключенный из отдельных файлов Методы которые надо реализовать в коллекции: map, filter, reduce - эти методы должны возвращать коллекцию с результатом не меняя старую коллекцию transform, sanitize - преобразует текущую коллекцию (аналоги map, filter) every, indexOf - работают так же как и стандартные методы в массиве values, toArray - возвращает array toJSON, toQueryString, toString - возвращает значение в указанном формате isEmpty - проверяет пустая коллекция или нет Статические методы которые надо реализовать в коллекции: make - создает коллекцию на основании переданного массива. map, filter, reduce - эти методы должны возвращать коллекцию с результатом не меняя старую коллекцию every, indexOf - работают так же как и стандартные методы в массиве toJSON, toQueryString - возвращает значение в указанном формате Свойства массива которые надо реализовать в коллекции: lenght
 //
 //
+
 const MyArrayProto = require('./MyArray');
 
 //
 //
+// Вывести в консоль по 4 значения из переданного массива с интервалом в 2 секунды.
 //
 //
+
+function consoleOutput(arr) {
+  for (let i = 0; i < arr.length; i += 4) {
+    setTimeout(() => {
+      console.log(arr[i], arr[i + 1], arr[i + 2], arr[i + 3]);
+    }, (i + 1) * 250);
+  }
+}
+
 //
+//
+// С помощью коллекции преобразовать данные testData4 в следующий вид
+//
+//
+
+function transformData(arr) {
+  const result = [];
+
+  arr.forEach((item) => {
+    if (typeof item.name !== 'undefined') {
+      result.push(item.name);
+    }
+  });
+  return result;
+}
+
+//
+//
+// На основании данных testData3 вывести последовательно в консоль имена программистов сгруппированных и отсортированных по их навыкам:
+//
+//
+
+function skillsFilter(arr) {
+  const php = [];
+  const js = [];
+  const madness = [];
+  const rage = [];
+
+  arr.forEach((item) => {
+    if (item.skills.php > 5) {
+      php.push(item.name);
+    } else if (item.skills.js > 5) {
+      js.push(item.name);
+    } else if (item.skills.madness > 5) {
+      madness.push(item.name);
+    } else if (item.skills.rage > 5) {
+      rage.push(item.name);
+    }
+  });
+  console.log(`
+  -----PHP----- 
+  ${php.join(', ')}
+
+  -----JS-----
+  ${js.join(', ')}
+
+  -----MADNESS-----
+  ${madness.join(', ')}
+
+  -----RAGE-----
+   ${rage.join(', ')}
+  `);
+}
